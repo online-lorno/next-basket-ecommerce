@@ -12,6 +12,9 @@ const config: Config = {
       sans: ['var(--font-montserrat)', 'sans-serif'],
     },
     extend: {
+      screens: {
+        '3xl': '1440px',
+      },
       colors: {
         main: '#252B42',
         primary: '#23A6F0',
