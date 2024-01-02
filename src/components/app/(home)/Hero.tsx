@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 export function HeroSection() {
   return (
-    <div className="mx-auto max-w-screen-xl px-10 py-20 md:px-0">
+    <div className="mx-auto max-w-screen-xl px-10 py-10 md:px-0 md:py-20">
       <div
         className={clsx(
           'grid grid-flow-row gap-[15px] sm:min-h-[616px]',

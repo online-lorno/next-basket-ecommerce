@@ -13,10 +13,10 @@ const config: Config = {
       sans: ['var(--font-montserrat)', 'sans-serif'],
     },
     backgroundImage: {
-      'home-hero-image-1': 'url("/images/home-hero-image-1.jpeg")',
-      'home-hero-image-2': 'url("/images/home-hero-image-2.jpeg")',
-      'home-hero-image-3': 'url("/images/home-hero-image-3.jpeg")',
-      'home-hero-image-4': 'url("/images/home-hero-image-4.jpeg")',
+      'home-hero-image-1': 'url("/images/home-hero-image-1.webp")',
+      'home-hero-image-2': 'url("/images/home-hero-image-2.webp")',
+      'home-hero-image-3': 'url("/images/home-hero-image-3.webp")',
+      'home-hero-image-4': 'url("/images/home-hero-image-4.webp")',
     },
     extend: {
       screens: {
