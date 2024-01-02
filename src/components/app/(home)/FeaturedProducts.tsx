@@ -7,7 +7,7 @@ type Props = ProductsResponse
 
 export function FeaturedProductsSection({ products }: Props) {
   return (
-    <div className="mx-auto max-w-screen-xl px-10 py-10 md:px-0 md:py-20">
+    <section className="mx-auto max-w-screen-xl px-10 py-10 md:px-0 md:py-20">
       <div className="flex flex-col space-y-6">
         <div className="flex flex-col space-y-[10px] text-center">
           <span className="text-xl text-secondary-gray">Featured Products</span>
@@ -23,6 +23,6 @@ export function FeaturedProductsSection({ products }: Props) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

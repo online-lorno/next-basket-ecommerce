@@ -20,6 +20,7 @@ const config: Config = {
     },
     extend: {
       screens: {
+        '1.5xl': '1050px',
         '3xl': '1440px',
       },
       colors: {

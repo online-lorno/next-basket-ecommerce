@@ -1,3 +1,4 @@
+import { BestServicesSection } from '@/components/app/(home)/BestServices'
 import { FeaturedProductsSection } from '@/components/app/(home)/FeaturedProducts'
 import { HeroSection } from '@/components/app/(home)/Hero'
 import { ProductsResponse } from '@/lib/types'
@@ -10,6 +11,7 @@ export default async function HomePage() {
     <>
       <HeroSection />
       <FeaturedProductsSection {...response} />
+      <BestServicesSection />
     </>
   )
 }
