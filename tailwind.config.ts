@@ -17,6 +17,7 @@ const config: Config = {
       'home-hero-image-2': 'url("/images/home-hero-image-2.webp")',
       'home-hero-image-3': 'url("/images/home-hero-image-3.webp")',
       'home-hero-image-4': 'url("/images/home-hero-image-4.webp")',
+      'home-bottom-hero': 'url("/images/home-bottom-hero.webp")',
     },
     extend: {
       screens: {

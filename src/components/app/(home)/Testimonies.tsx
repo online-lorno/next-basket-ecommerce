@@ -16,6 +16,7 @@ export function TestmoniesSection() {
             <Avatar
               src="/images/user-review-1.webp"
               className="h-[90px] w-[90px]"
+              alt="user-review-1"
             />
             <div className="flex items-center space-x-[5px]">
               <StartSolidIcon className="h-5 w-5 text-secondary-yellow" />
