@@ -12,7 +12,10 @@ export function ProductCard({ product }: Props) {
     product.price - product.price * (product.discountPercentage / 100)
 
   return (
-    <div className="flex w-[295px] flex-col md:w-[183px]" title={product.title}>
+    <div
+      className="flex w-[295px] flex-col shadow md:w-[183px]"
+      title={product.title}
+    >
       <div className="card-zoom h-[380px] w-full md:h-[238px]">
         <div
           className="card-zoom-image bg-red-50"

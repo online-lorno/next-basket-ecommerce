@@ -1,7 +1,8 @@
 import { BestServicesSection } from '@/components/app/(home)/BestServices'
-import { FeaturedPosts } from '@/components/app/(home)/FeaturedPosts'
+import { FeaturedPostsSection } from '@/components/app/(home)/FeaturedPosts'
 import { FeaturedProductsSection } from '@/components/app/(home)/FeaturedProducts'
 import { HeroSection } from '@/components/app/(home)/Hero'
+import { TestmoniesSection } from '@/components/app/(home)/Testimonies'
 import jsonPosts from '@/constants/posts.json'
 import { ProductsResponse } from '@/lib/types'
 import { Post } from '@/lib/types'
@@ -15,7 +16,8 @@ export default async function HomePage() {
       <HeroSection />
       <FeaturedProductsSection {...response} />
       <BestServicesSection />
-      <FeaturedPosts posts={jsonPosts as Post[]} />
+      <FeaturedPostsSection posts={jsonPosts as Post[]} />
+      <TestmoniesSection />
     </>
   )
 }
