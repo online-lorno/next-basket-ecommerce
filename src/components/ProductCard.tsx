@@ -19,7 +19,7 @@ export function ProductCard({ product }: Props) {
           style={{ backgroundImage: `url(${product.thumbnail})` }}
         ></div>
       </div>
-      <div className="flex flex-col space-y-[10px] bg-white px-1 py-[35px] pt-[25px] text-center">
+      <div className="flex flex-col space-y-[10px] bg-white px-1 pb-[35px] pt-[25px] text-center">
         <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap font-bold">
           {product.title}
         </span>
