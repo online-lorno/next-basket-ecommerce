@@ -1,3 +1,9 @@
+import { HeroSection } from '@/components/app/(home)/Hero'
+
 export default async function HomePage() {
-  return <h1>Home Page</h1>
+  return (
+    <>
+      <HeroSection />
+    </>
+  )
 }

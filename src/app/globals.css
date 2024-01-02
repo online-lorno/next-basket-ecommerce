@@ -8,6 +8,18 @@
   }
 
   body {
-    @apply text-main bg-light-gray font-normal;
+    @apply bg-light-gray font-normal text-main;
+  }
+
+  .card-zoom {
+    @apply relative flex items-center justify-center overflow-hidden;
+  }
+
+  .card-zoom-image {
+    @apply absolute h-full w-full transform bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out;
+  }
+
+  .card-zoom:hover .card-zoom-image {
+    @apply scale-110;
   }
 }
