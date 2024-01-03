@@ -2,6 +2,7 @@ import './globals.css'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/constants/site'
+import StoreProvider from '@/redux/provider'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable}`}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <StoreProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   )

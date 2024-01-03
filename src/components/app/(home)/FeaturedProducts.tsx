@@ -8,17 +8,11 @@ import { useState } from 'react'
 
 type Props = ProductsResponse
 
-export function FeaturedProductsSection({
-  products,
-  total,
-  limit,
-  skip,
-}: Props) {
+export function FeaturedProductsSection({ products, total, limit }: Props) {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>(products)
   const pages = Math.ceil(total / limit)
   const [currentPage, setCurrentPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
-  console.log({ total, limit, skip })
 
   const handleLoadMoreProducts = async () => {
     const nextPage = currentPage + 1
