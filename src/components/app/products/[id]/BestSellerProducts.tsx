@@ -1,3 +1,5 @@
+'use client'
+
 import { ProductListGrid } from '@/components/ProductListGrid'
 import { Product } from '@/lib/types'
 

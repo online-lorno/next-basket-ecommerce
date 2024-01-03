@@ -1,5 +1,6 @@
 import { BreadCrumbsSection } from '@/components/BreadCrumbs'
 import { BestSellerProductsSection } from '@/components/app/products/[id]/BestSellerProducts'
+import { BrandListSection } from '@/components/app/products/[id]/BrandList'
 import { ProductDetailsSection } from '@/components/app/products/[id]/ProductDetails'
 import { ProductInformationSection } from '@/components/app/products/[id]/ProductInformation'
 import { SITE_NAME } from '@/constants/site'
@@ -58,6 +59,7 @@ export default async function ProductPage({ params }: Props) {
       <ProductDetailsSection product={product} />
       <ProductInformationSection product={product} />
       <BestSellerProductsSection products={relatedProductsResponse.products} />
+      <BrandListSection />
     </>
   )
 }

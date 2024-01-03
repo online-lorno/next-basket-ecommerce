@@ -7,24 +7,26 @@ import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa6'
 export function Footer() {
   return (
     <footer>
-      <section className="max-w-screen-1.5xl mx-auto flex items-center justify-between px-12 py-[70px] md:py-10 lg:px-0">
-        <Link href="/">
-          <h1 className="text-2xl font-bold">Bandage</h1>
-        </Link>
-        <div className="flex space-x-5">
+      <section className="bg-white">
+        <div className="mx-auto flex max-w-screen-1.5xl items-center justify-between border-b border-b-[#E6E6E6] px-12 py-[70px] md:py-10 lg:px-0">
           <Link href="/">
-            <FaFacebook className="h-6 w-6 text-primary" />
+            <h1 className="text-2xl font-bold">Bandage</h1>
           </Link>
-          <Link href="/">
-            <FaInstagram className="h-6 w-6 text-primary" />
-          </Link>
-          <Link href="/">
-            <FaTwitter className="h-6 w-6 text-primary" />
-          </Link>
+          <div className="flex space-x-5">
+            <Link href="/">
+              <FaFacebook className="h-6 w-6 text-primary" />
+            </Link>
+            <Link href="/">
+              <FaInstagram className="h-6 w-6 text-primary" />
+            </Link>
+            <Link href="/">
+              <FaTwitter className="h-6 w-6 text-primary" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="bg-white">
-        <div className="max-w-screen-1.5xl mx-auto flex flex-col flex-nowrap gap-[30px] px-12 py-[50px] md:flex-row md:flex-wrap lg:px-0">
+        <div className="mx-auto flex max-w-screen-1.5xl flex-col flex-nowrap gap-[30px] px-12 py-[50px] md:flex-row md:flex-wrap lg:px-0">
           <div className="flex w-[150px] flex-col space-y-5">
             <span className="font-bold">Company Info</span>
             <div className="flex flex-col space-y-[10px]">
@@ -156,7 +158,7 @@ export function Footer() {
           </div>
         </div>
       </section>
-      <section className="max-w-screen-1.5xl mx-auto flex justify-center px-12 py-[25px] lg:px-0">
+      <section className="mx-auto flex max-w-screen-1.5xl justify-center px-12 py-[25px] lg:px-0">
         <span className="w-[200px] text-center text-sm font-bold text-secondary-gray md:w-full md:text-left">
           Made With Love By Finland All Right Reserved
         </span>
