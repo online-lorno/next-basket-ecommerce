@@ -2,6 +2,7 @@
 
 import { Product } from '@/lib/types'
 import { formatCurrency } from '@/lib/utils'
+import Link from 'next/link'
 
 type Props = {
   product: Product
@@ -12,7 +13,8 @@ export function ProductCard({ product }: Props) {
     product.price - product.price * (product.discountPercentage / 100)
 
   return (
-    <div
+    <Link
+      href={`/products/${product.id}`}
       className="flex w-[295px] flex-col shadow md:w-[183px]"
       title={product.title}
     >
@@ -38,6 +40,6 @@ export function ProductCard({ product }: Props) {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

@@ -33,6 +33,7 @@ const config: Config = {
           gray: '#737373',
         },
         danger: '#E74040',
+        alert: '#E77C40',
         success: '#2DC071',
         muted: '#BDBDBD',
         disabled: '#8EC2F2',

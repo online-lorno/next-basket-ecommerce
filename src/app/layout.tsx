@@ -1,6 +1,7 @@
 import './globals.css'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { SITE_NAME, SITE_DESCRIPTION } from '@/constants/site'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
@@ -12,8 +13,13 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Next Basket Ecommerce',
-  description: 'Problems trying to resolve the conflict between',
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: '/images/home-hero-image-1.webp',
+  },
 }
 
 export default function RootLayout({

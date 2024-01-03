@@ -244,8 +244,8 @@ export function Header() {
         <div className="mx-auto flex max-w-screen-3xl items-center justify-between text-blue-gray-900">
           <div className="flex items-center gap-[119px]">
             <Typography
-              as="a"
-              href="#"
+              as={Link}
+              href="/"
               variant="h6"
               className="cursor-pointer py-1.5 text-2xl font-bold lg:ml-2"
             >
