@@ -20,5 +20,5 @@ const customerSlice = createSlice({
   },
 })
 
+export const customerActions = customerSlice.actions
 export default customerSlice.reducer
-export const appActions = customerSlice.actions

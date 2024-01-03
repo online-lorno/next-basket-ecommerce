@@ -1,6 +1,11 @@
 'use client'
 
 import { Promotion } from './Promotion'
+import { useAppSelector } from '@/lib/hooks/redux'
+import {
+  getCartProducts,
+  getFavorites,
+} from '@/redux/customer/customerSelector'
 import {
   ChevronDownIcon,
   Bars3Icon,
@@ -33,6 +38,7 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
+  Badge,
 } from '@material-tailwind/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -229,6 +235,8 @@ function NavList() {
 
 export function Header() {
   const [openNav, setOpenNav] = React.useState(false)
+  const favorites = useAppSelector(getFavorites)
+  const cartProducts = useAppSelector(getCartProducts)
 
   React.useEffect(() => {
     window.addEventListener(
@@ -266,14 +274,36 @@ export function Header() {
               Log In / Register
             </Button>
             <Button variant="text" size="sm" color="blue-gray">
-              <MagnifyingGlassIcon className="h-4 w-4 text-primary" />
+              <MagnifyingGlassIcon className="h-5 w-5 text-primary" />
             </Button>
-            <Button variant="text" size="sm" color="blue-gray">
-              <ShoppingCartIcon className="h-4 w-4 text-primary" />
-            </Button>
-            <Button variant="text" size="sm" color="blue-gray">
-              <HeartIcon className="h-4 w-4 text-primary" />
-            </Button>
+            {cartProducts.length > 0 ? (
+              <Badge
+                content={cartProducts.length}
+                className="right-[10px] top-[18px] bg-transparent text-xs text-primary"
+              >
+                <Button variant="text" size="sm" color="blue-gray">
+                  <ShoppingCartIcon className="h-5 w-5 text-primary" />
+                </Button>
+              </Badge>
+            ) : (
+              <Button variant="text" size="sm" color="blue-gray">
+                <ShoppingCartIcon className="h-5 w-5 text-primary" />
+              </Button>
+            )}
+            {favorites.length > 0 ? (
+              <Badge
+                content={favorites.length}
+                className="right-[10px] top-[18px] bg-transparent text-xs text-primary"
+              >
+                <Button variant="text" size="sm" color="blue-gray">
+                  <HeartIcon className="h-5 w-5 text-primary" />
+                </Button>
+              </Badge>
+            ) : (
+              <Button variant="text" size="sm" color="blue-gray">
+                <HeartIcon className="h-5 w-5 text-primary" />
+              </Button>
+            )}
           </div>
           <IconButton
             variant="text"

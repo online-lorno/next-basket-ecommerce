@@ -1,8 +1,14 @@
 'use client'
 
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks/redux'
 import { Product } from '@/lib/types'
 import { formatCurrency } from '@/lib/utils'
+import {
+  getCartProducts,
+  getFavorites,
+} from '@/redux/customer/customerSelector'
+import { customerActions } from '@/redux/customer/customerSlice'
 import {
   StarIcon as StartOutlineIcon,
   HeartIcon,
@@ -18,6 +24,11 @@ type Props = {
 
 export function ProductDetailsSection({ product }: Props) {
   const hasStock = product.stock > 0
+  const dispatch = useAppDispatch()
+  const cartProducts = useAppSelector(getCartProducts)
+  const isInCart = cartProducts.some((item) => item.id === product.id)
+  const favorites = useAppSelector(getFavorites)
+  const isFavorite = favorites.some((id) => id === product.id)
 
   return (
     <section className="mx-auto max-w-screen-1.5xl pb-12">
@@ -70,16 +81,40 @@ export function ProductDetailsSection({ product }: Props) {
               Select Options
             </Button>
             <Button
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-muted bg-white p-0 shadow-md"
+              className={clsx(
+                'flex h-10 w-10 items-center justify-center rounded-full border border-muted p-0 shadow-md',
+                isFavorite ? 'bg-red-500' : 'bg-white',
+              )}
               variant="filled"
+              onClick={() => {
+                dispatch(customerActions.addToFavorites(product))
+              }}
             >
-              <HeartIcon className="h-5 w-5 text-main" />
+              <HeartIcon
+                className={clsx(
+                  'h-5 w-5',
+                  isFavorite ? 'text-white' : 'text-main',
+                )}
+              />
             </Button>
             <Button
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-muted bg-white p-0 shadow-md"
+              className={clsx(
+                'flex h-10 w-10 items-center justify-center rounded-full border border-muted bg-white p-0 shadow-md',
+                isInCart ? 'bg-primary' : 'bg-white',
+              )}
               variant="filled"
+              onClick={() => {
+                if (!isInCart) {
+                  dispatch(customerActions.addToCart(product))
+                }
+              }}
             >
-              <ShoppingCartIcon className="h-5 w-5 text-main" />
+              <ShoppingCartIcon
+                className={clsx(
+                  'h-5 w-5',
+                  isInCart ? 'text-white' : 'text-main',
+                )}
+              />
             </Button>
             <Button
               className="flex h-10 w-10 items-center justify-center rounded-full border border-muted bg-white p-0 shadow-md"
