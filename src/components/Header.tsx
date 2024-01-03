@@ -5,6 +5,10 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
+  UserIcon,
+  MagnifyingGlassIcon,
+  ShoppingCartIcon,
+  HeartIcon,
 } from '@heroicons/react/24/outline'
 import {
   Bars4Icon,
@@ -251,12 +255,24 @@ export function Header() {
               <NavList />
             </div>
           </div>
-          <div className="hidden gap-2 lg:flex">
-            <Button variant="text" size="sm" color="blue-gray">
-              Log In
+          <div className="hidden lg:flex">
+            <Button
+              variant="text"
+              size="sm"
+              color="blue-gray"
+              className="flex items-center gap-2 text-sm capitalize text-primary"
+            >
+              <UserIcon className="h-4 w-4" />
+              Log In / Register
             </Button>
-            <Button variant="gradient" size="sm">
-              Sign In
+            <Button variant="text" size="sm" color="blue-gray">
+              <MagnifyingGlassIcon className="h-4 w-4 text-primary" />
+            </Button>
+            <Button variant="text" size="sm" color="blue-gray">
+              <ShoppingCartIcon className="h-4 w-4 text-primary" />
+            </Button>
+            <Button variant="text" size="sm" color="blue-gray">
+              <HeartIcon className="h-4 w-4 text-primary" />
             </Button>
           </div>
           <IconButton
@@ -275,11 +291,15 @@ export function Header() {
         <Collapse open={openNav}>
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-            <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
-              Log In
-            </Button>
-            <Button variant="gradient" size="sm" fullWidth>
-              Sign In
+            <Button
+              variant="text"
+              size="sm"
+              color="blue-gray"
+              className="flex items-center gap-2 text-sm capitalize text-primary"
+              fullWidth
+            >
+              <UserIcon className="h-4 w-4" />
+              Log In / Register
             </Button>
           </div>
         </Collapse>

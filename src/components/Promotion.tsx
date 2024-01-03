@@ -5,7 +5,7 @@ import { FaInstagram, FaYoutube, FaFacebook, FaTwitter } from 'react-icons/fa6'
 
 export function Promotion() {
   return (
-    <div className="hidden w-full bg-secondary-green px-4 lg:block 2xl:px-0">
+    <div className="hidden w-full bg-secondary-green px-4 lg:block ">
       <div className="mx-auto flex max-w-screen-3xl items-center justify-between py-3 text-sm font-bold text-white">
         <div className="flex space-x-[30px]">
           <div className="flex items-center space-x-1">
