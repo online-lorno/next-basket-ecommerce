@@ -234,7 +234,7 @@ export function Header() {
   }, [])
 
   return (
-    <>
+    <header>
       <Promotion />
       <Navbar className="max-w-full rounded-none px-4 py-2">
         <div className="mx-auto flex max-w-screen-3xl items-center justify-between text-blue-gray-900">
@@ -284,6 +284,6 @@ export function Header() {
           </div>
         </Collapse>
       </Navbar>
-    </>
+    </header>
   )
 }
