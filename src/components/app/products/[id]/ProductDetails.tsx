@@ -6,7 +6,7 @@ import { Product } from '@/lib/types'
 import { formatCurrency } from '@/lib/utils'
 import {
   getCartProducts,
-  getFavorites,
+  getFavoriteProducts,
 } from '@/redux/customer/customerSelector'
 import { customerActions } from '@/redux/customer/customerSlice'
 import {
@@ -27,8 +27,8 @@ export function ProductDetailsSection({ product }: Props) {
   const dispatch = useAppDispatch()
   const cartProducts = useAppSelector(getCartProducts)
   const isInCart = cartProducts.some((item) => item.id === product.id)
-  const favorites = useAppSelector(getFavorites)
-  const isFavorite = favorites.some((id) => id === product.id)
+  const favoriteProducts = useAppSelector(getFavoriteProducts)
+  const isFavorite = favoriteProducts.some((item) => item.id === product.id)
 
   return (
     <section className="mx-auto max-w-screen-1.5xl pb-12">

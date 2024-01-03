@@ -1,9 +1,9 @@
 import { STORAGE_KEY } from '@/constants'
-import { CartProduct } from '@/lib/types'
+import { CartProduct, Product } from '@/lib/types'
 
 export type CustomerState = {
   cart: CartProduct[]
-  favorites: number[]
+  favorites: Product[]
 }
 
 export const CustomerInitialState = (): CustomerState => {

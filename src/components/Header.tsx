@@ -1,10 +1,12 @@
 'use client'
 
+import { CartMenu } from './CartMenu'
+import { FavoritesMenu } from './FavoritesMenu'
 import { Promotion } from './Promotion'
 import { useAppSelector } from '@/lib/hooks/redux'
 import {
   getCartProducts,
-  getFavorites,
+  getFavoriteProducts,
 } from '@/redux/customer/customerSelector'
 import {
   ChevronDownIcon,
@@ -12,8 +14,6 @@ import {
   XMarkIcon,
   UserIcon,
   MagnifyingGlassIcon,
-  ShoppingCartIcon,
-  HeartIcon,
 } from '@heroicons/react/24/outline'
 import {
   Bars4Icon,
@@ -38,7 +38,6 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-  Badge,
 } from '@material-tailwind/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -235,7 +234,7 @@ function NavList() {
 
 export function Header() {
   const [openNav, setOpenNav] = React.useState(false)
-  const favorites = useAppSelector(getFavorites)
+  const favoriteProducts = useAppSelector(getFavoriteProducts)
   const cartProducts = useAppSelector(getCartProducts)
 
   React.useEffect(() => {
@@ -276,34 +275,8 @@ export function Header() {
             <Button variant="text" size="sm" color="blue-gray">
               <MagnifyingGlassIcon className="h-5 w-5 text-primary" />
             </Button>
-            {cartProducts.length > 0 ? (
-              <Badge
-                content={cartProducts.length}
-                className="right-2 top-2 bg-transparent text-xs text-primary"
-              >
-                <Button variant="text" size="sm" color="blue-gray">
-                  <ShoppingCartIcon className="h-5 w-5 text-primary" />
-                </Button>
-              </Badge>
-            ) : (
-              <Button variant="text" size="sm" color="blue-gray">
-                <ShoppingCartIcon className="h-5 w-5 text-primary" />
-              </Button>
-            )}
-            {favorites.length > 0 ? (
-              <Badge
-                content={favorites.length}
-                className="right-2 top-2 bg-transparent text-xs text-primary"
-              >
-                <Button variant="text" size="sm" color="blue-gray">
-                  <HeartIcon className="h-5 w-5 text-primary" />
-                </Button>
-              </Badge>
-            ) : (
-              <Button variant="text" size="sm" color="blue-gray">
-                <HeartIcon className="h-5 w-5 text-primary" />
-              </Button>
-            )}
+            <CartMenu cartProducts={cartProducts} />
+            <FavoritesMenu products={favoriteProducts} />
           </div>
           <IconButton
             variant="text"

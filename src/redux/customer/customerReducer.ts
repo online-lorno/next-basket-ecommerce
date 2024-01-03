@@ -70,12 +70,16 @@ export const addToFavorites: CaseReducer<
   CustomerState,
   PayloadAction<Product>
 > = (state, action) => {
-  if (!state.favorites.includes(action.payload.id)) {
-    state.favorites.push(action.payload.id)
+  const product = state.favorites.find(
+    (product) => product.id === action.payload.id,
+  )
+
+  if (!product) {
+    state.favorites.push(action.payload)
     saveToLocalStorage(state)
   } else {
     state.favorites = state.favorites.filter(
-      (productId) => productId !== action.payload.id,
+      (product) => product.id !== action.payload.id,
     )
     saveToLocalStorage(state)
   }
