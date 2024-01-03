@@ -13,8 +13,8 @@ type Props = {
 
 export function BreadCrumbsSection({ breadCrumbs }: Props) {
   return (
-    <section className="max-w-screen-1.5xl mx-auto">
-      <div className="flex w-full items-center py-6">
+    <section className="mx-auto max-w-screen-1.5xl">
+      <div className="flex w-full items-center px-6 py-6 md:px-0">
         <div className="flex items-center justify-center space-x-2">
           {breadCrumbs.map((breadCrumb, index) => {
             const isLastItem = index === breadCrumbs.length - 1
