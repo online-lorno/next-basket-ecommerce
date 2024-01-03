@@ -7,13 +7,15 @@ export type CustomerState = {
 }
 
 export const CustomerInitialState = (): CustomerState => {
-  const jsonStorage = localStorage.getItem(STORAGE_KEY)
-  const storedCustomerState = jsonStorage
-    ? (JSON.parse(jsonStorage) as CustomerState)
-    : undefined
-
-  return {
-    cart: storedCustomerState?.cart || [],
-    favorites: storedCustomerState?.favorites || [],
+  let jsonStorage = null
+  if (typeof window !== 'undefined') {
+    jsonStorage = window.localStorage.getItem(STORAGE_KEY)
   }
+
+  return jsonStorage
+    ? (JSON.parse(jsonStorage) as CustomerState)
+    : {
+        cart: [],
+        favorites: [],
+      }
 }
