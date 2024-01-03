@@ -38,6 +38,7 @@ const config: Config = {
         muted: '#BDBDBD',
         disabled: '#8EC2F2',
         'light-gray': '#FAFAFA',
+        'light-gray-2': '#ECECEC',
       },
     },
   },

@@ -1,5 +1,6 @@
 import { BreadCrumbsSection } from '@/components/BreadCrumbs'
 import { ProductDetailsSection } from '@/components/app/products/[id]/ProductDetails'
+import { ProductInformationSection } from '@/components/app/products/[id]/ProductInformation'
 import { SITE_NAME } from '@/constants/site'
 import { SITE_BREADCRUMBS } from '@/constants/site'
 import { Product } from '@/lib/types'
@@ -49,6 +50,7 @@ export default async function ProductPage({ params }: Props) {
     <>
       <BreadCrumbsSection breadCrumbs={breadCrumbs} />
       <ProductDetailsSection product={product} />
+      <ProductInformationSection product={product} />
     </>
   )
 }
