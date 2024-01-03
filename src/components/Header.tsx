@@ -279,7 +279,7 @@ export function Header() {
             {cartProducts.length > 0 ? (
               <Badge
                 content={cartProducts.length}
-                className="right-[10px] top-[18px] bg-transparent text-xs text-primary"
+                className="right-2 top-2 bg-transparent text-xs text-primary"
               >
                 <Button variant="text" size="sm" color="blue-gray">
                   <ShoppingCartIcon className="h-5 w-5 text-primary" />
@@ -293,7 +293,7 @@ export function Header() {
             {favorites.length > 0 ? (
               <Badge
                 content={favorites.length}
-                className="right-[10px] top-[18px] bg-transparent text-xs text-primary"
+                className="right-2 top-2 bg-transparent text-xs text-primary"
               >
                 <Button variant="text" size="sm" color="blue-gray">
                   <HeartIcon className="h-5 w-5 text-primary" />
