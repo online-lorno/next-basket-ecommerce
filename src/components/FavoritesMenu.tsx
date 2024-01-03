@@ -79,7 +79,12 @@ export function FavoritesMenu({ products }: { products: Product[] }) {
         </MenuHandler>
         <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
           {products.length > 0 ? (
-            <ul className="gap-y-2 outline-none outline-0">{renderItems}</ul>
+            <>
+              <Typography variant="h5" className="mb-2 font-bold">
+                Favorites
+              </Typography>
+              <ul className="gap-y-2 outline-none outline-0">{renderItems}</ul>
+            </>
           ) : (
             <div className="flex items-center justify-center gap-2 p-4">
               <Typography variant="h6" className="font-bold">

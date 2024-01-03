@@ -115,6 +115,9 @@ export function CartMenu({ cartProducts }: { cartProducts: CartProduct[] }) {
         <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
           {cartProducts.length > 0 ? (
             <>
+              <Typography variant="h5" className="mb-2 font-bold">
+                Cart
+              </Typography>
               <ul className="gap-y-2 border-b border-b-main outline-none outline-0">
                 {renderItems}
               </ul>
