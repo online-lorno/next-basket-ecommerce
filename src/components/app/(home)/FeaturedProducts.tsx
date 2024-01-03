@@ -1,6 +1,6 @@
 'use client'
 
-import { ProductCard } from '@/components/ProductCard'
+import { ProductListGrid } from '@/components/ProductListGrid'
 import { ProductsResponse } from '@/lib/types'
 
 type Props = ProductsResponse
@@ -17,11 +17,7 @@ export function FeaturedProductsSection({ products }: Props) {
           </span>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-[30px] gap-y-[30px] p-6 md:gap-y-[15px]">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <ProductListGrid products={products} />
       </div>
     </section>
   )
